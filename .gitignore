@@ -1,0 +1,59 @@
+# ===========================================
+#  .gitignore pour un workspace MCreator
+#  (MCreator génère un projet Gradle / Forge)
+# ===========================================
+
+# --- Gradle / build ---
+.gradle/
+build/
+out/
+bin/
+classes/
+*.class
+
+# --- Garder le wrapper Gradle ---
+!gradle/wrapper/gradle-wrapper.jar
+
+# --- Dossier de lancement Minecraft (client/serveur de test) ---
+run/
+runs/
+run-data/
+logs/
+crash-reports/
+*.log
+
+# --- Caches et fichiers temporaires MCreator ---
+.mcreator/
+*.tmp
+*.bak
+*.backup
+workspace.mcreator.backup*
+
+# --- IDE (MCreator peut ouvrir le projet dans IntelliJ / Eclipse / VS Code) ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+.metadata/
+
+# --- Fichiers OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# --- Exports (le .jar final se publie en release, pas dans le repo) ---
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# ===========================================
+#  À GARDER dans le repo (ne pas ignorer) :
+#  - *.mcreator            (fichier du workspace)
+#  - elements/             (définitions des éléments du mod)
+#  - src/                  (code généré + code verrouillé/custom)
+#  - build.gradle, settings.gradle, gradle.properties, gradlew*
+# ===========================================
