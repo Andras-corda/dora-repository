@@ -7,6 +7,13 @@
   "language_map": {
     "en_us": {}
   },
+  "metadata": {
+    "files": [
+      "src/main/resources/META-INF/mods.toml",
+      "src/main/java/net/qbits/dora/DoraMod.java",
+      "src/main/resources/pack.mcmeta"
+    ]
+  },
   "foldersRoot": {
     "name": "~",
     "children": []

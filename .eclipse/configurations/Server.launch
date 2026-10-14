@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
-    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="test"></stringAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="dora-repository"></stringAttribute>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.neoforged.devlaunch.Main"></stringAttribute>
-    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value=" @C:\\Users\\Andra\\Desktop\\test\\build\\moddev\\serverRunProgramArgs.txt"></stringAttribute>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value=" @C:\\Users\\Andra\\Desktop\\test\\build\\moddev\\serverRunVmArgs.txt -Dfml.modFolders=mcreator%%C:\\Users\\Andra\\Desktop\\test\\bin\\main"></stringAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value=" @C:\\Users\\oxana\\OneDrive\\Documents\\dora-repository\\build\\moddev\\serverRunProgramArgs.txt"></stringAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value=" @C:\\Users\\oxana\\OneDrive\\Documents\\dora-repository\\build\\moddev\\serverRunVmArgs.txt -Dfml.modFolders=mcreator%%C:\\Users\\oxana\\OneDrive\\Documents\\dora-repository\\bin\\main"></stringAttribute>
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
-        <mapEntry key="MOD_CLASSES" value="mcreator%%C:\Users\Andra\Desktop\test\bin\main"></mapEntry>
+        <mapEntry key="MOD_CLASSES" value="mcreator%%C:\Users\oxana\OneDrive\Documents\dora-repository\bin\main"></mapEntry>
     </mapAttribute>
-    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\Users\Andra\Desktop\test\run"></stringAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\Users\oxana\OneDrive\Documents\dora-repository\run"></stringAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.STOP_IN_MAIN" value="false"></booleanAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"></booleanAttribute>
 </launchConfiguration>
