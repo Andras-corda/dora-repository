@@ -2,11 +2,11 @@
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-public class ModelCustomModel<T extends Entity> extends EntityModel<T> {
+public class ModelKittyCat<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-			new ResourceLocation("modid", "custommodel"), "main");
+			new ResourceLocation("modid", "kittycat"), "main");
 	private final ModelPart head;
 	private final ModelPart body;
 	private final ModelPart front_left_leg;
@@ -16,7 +16,7 @@ public class ModelCustomModel<T extends Entity> extends EntityModel<T> {
 	private final ModelPart tail;
 	private final ModelPart tail2;
 
-	public ModelCustomModel(ModelPart root) {
+	public ModelKittyCat(ModelPart root) {
 		this.head = root.getChild("head");
 		this.body = root.getChild("body");
 		this.front_left_leg = root.getChild("front_left_leg");

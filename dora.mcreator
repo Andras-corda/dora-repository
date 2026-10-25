@@ -1,38 +1,15 @@
 {
-  "mod_elements": [
-    {
-      "name": "Palacecat",
-      "type": "livingentity",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "palacecat",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/dora/forge/biome_modifier/palacecat_biome_modifier.json",
-          "src/main/resources/assets/dora/models/item/palacecat_spawn_egg.json",
-          "src/main/java/net/qbits/dora/client/renderer/PalacecatRenderer.java",
-          "src/main/java/net/qbits/dora/entity/PalacecatEntity.java"
-        ]
-      }
-    }
-  ],
+  "mod_elements": [],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
-    "en_us": {
-      "item.dora.palacecat_spawn_egg": "Palacecat Spawn Egg",
-      "entity.dora.palacecat": "Palacecat"
-    }
+    "en_us": {}
   },
   "metadata": {
     "files": [
-      "src/main/java/net/qbits/dora/init/DoraModItems.java",
-      "src/main/java/net/qbits/dora/init/DoraModEntityRenderers.java",
-      "src/main/java/net/qbits/dora/init/DoraModEntities.java",
       "src/main/resources/META-INF/mods.toml",
-      "src/main/java/net/qbits/dora/init/DoraModTabs.java",
       "src/main/java/net/qbits/dora/init/DoraModModels.java",
       "src/main/java/net/qbits/dora/DoraMod.java",
       "src/main/resources/pack.mcmeta"

@@ -3,10 +3,6 @@ package net.qbits.dora;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-import net.qbits.dora.init.DoraModTabs;
-import net.qbits.dora.init.DoraModItems;
-import net.qbits.dora.init.DoraModEntities;
-
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
@@ -43,9 +39,6 @@ public class DoraMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = context.getModEventBus();
-		DoraModItems.REGISTRY.register(bus);
-		DoraModEntities.REGISTRY.register(bus);
-		DoraModTabs.REGISTRY.register(bus);
 		// Start of user code block mod init
 		// End of user code block mod init
 	}
