@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "dora:block/maple_planks",
+    "side": "dora:block/maple_planks",
+    "top": "dora:block/maple_planks"
+  }
+}

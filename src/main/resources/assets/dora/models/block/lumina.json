@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dora:block/lumina_bottom",
+    "side": "dora:block/lumina_side",
+    "top": "dora:block/lumina_top"
+  }
+}

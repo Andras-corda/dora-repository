@@ -1,67 +1,175 @@
 plugins {
     id 'eclipse'
-    id 'net.neoforged.moddev.legacyforge' version '2.0.143'
+    id 'idea'
+    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.4.1'
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[7.0,8)'
+    id 'net.minecraftforge.renamer' version '1.1.8+'
 }
 
-version = '1.0'
-base.archivesName = "modid"
+version = mod_version
+group = mod_group_id
+base.archivesName = mod_id
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-legacyForge {
-    version = "1.20.1-47.4.22"
+minecraft {
+    mappings channel: mapping_channel, version: mapping_version
 
     runs {
-        client {
-            client()
-
-            def mcreatorJvmOptions = System.getenv('MCREATOR_JVM_OPTIONS')
-            if (mcreatorJvmOptions) {
-                mcreatorJvmOptions.split("\\s+").findAll { it.trim() }.each { arg ->
-                    jvmArgument(arg)
-                }
-            }
-        }
-        server {
-            server()
-        }
-
         configureEach {
-            systemProperty 'forge.logging.markers', 'REGISTRIES'
-            logLevel = org.slf4j.event.Level.DEBUG
+            workingDir.convention layout.projectDirectory.dir('run')
         }
-    }
 
-    mods {
-        mcreator {
-            sourceSet sourceSets.main
+        register('client') {
+            systemProperty 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        register('server') {
+            systemProperty 'forge.enabledGameTestNamespaces', mod_id
+            args '--nogui'
+        }
+
+        register('data') {
+            workingDir = layout.projectDirectory.dir('run-data')
+            args '--mod', mod_id, '--all', '--output', layout.projectDirectory.dir('src/generated/resources'), '--existing', layout.projectDirectory.dir('src/main/resources')
         }
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
 }
 
-mixin {
-    if (file("src/main/resources/dora.mixins.json").exists()) {
-        add sourceSets.main, "dora.refmap.json"
-        config "dora.mixins.json"
-    }
+configurations {
+    terrablender { transitive = false }
 }
 
 dependencies {
-    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
-    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    implementation minecraft.dependency("net.minecraftforge:forge:$minecraft_version-$forge_version")
+    terrablender "com.github.glitchfiend:TerraBlender-forge:$minecraft_version-$terrablender_version"
 }
 
-jar {
-    if (file("src/main/resources/dora.mixins.json").exists()) {
-        manifest.attributes([
-                "MixinConfigs": "dora.mixins.json"
-        ])
+def atPath = 'META-INF/accesstransformer.cfg'
+def isWildcardMethod = { String line -> line.trim().endsWith('*()') }
+
+tasks.register('stripTerraBlender', Zip) {
+    from(zipTree(configurations.terrablender.singleFile)) {
+        filesMatching(atPath) { filter { line -> isWildcardMethod(line) ? '' : line } }
+    }
+    archiveFileName = 'terrablender-stripped.jar'
+    destinationDirectory = layout.buildDirectory.dir('terrablender')
+}
+
+def renameTerraBlender = renamer.classes('renameTerraBlender', tasks.named('stripTerraBlender', Zip)) {
+    reverse = true
+    naiveSrg = true
+    accessTransformers = true
+    archiveClassifier = 'renamed'
+    libraries.setFrom()
+}
+
+tasks.register('fixTerraBlenderMetadata') {
+    def renamedJar = renameTerraBlender.flatMap { it.output }
+    def original = configurations.terrablender
+    def srgMap = files(minecraft.dependency.toSrgFile)
+    def outputDir = layout.buildDirectory.dir('terrablender/meta')
+    inputs.file(renamedJar)
+    inputs.files(original)
+    inputs.files(srgMap)
+    outputs.dir(outputDir)
+    doLast {
+        def out = outputDir.get().asFile
+        out.deleteDir()
+        def write = { String path, String text ->
+            def file = new File(out, path)
+            file.parentFile.mkdirs()
+            file.setText(text, 'UTF-8')
+        }
+        def entries = { File jar, Closure<Boolean> filter ->
+            new java.util.zip.ZipFile(jar).withCloseable { z ->
+                z.entries().toList().findAll { filter(it.name) }.collectEntries { [(it.name): z.getInputStream(it).getText('UTF-8')] }
+            }
+        }
+
+        def wildcards = entries(original.singleFile) { it == atPath }[atPath].readLines().findAll(isWildcardMethod)
+        write(atPath, entries(renamedJar.get().asFile) { it == atPath }[atPath] + '\n' + wildcards.join('\n') + '\n')
+
+        def mapFile = srgMap.singleFile
+        def mapStream = mapFile.name.endsWith('.gz') ? new java.util.zip.GZIPInputStream(mapFile.newInputStream()) : mapFile.newInputStream()
+        def srgToName = [:]
+        mapStream.withReader('UTF-8') { reader ->
+            reader.eachLine { line ->
+                if (line.startsWith('\t') && !line.startsWith('\t\t')) {
+                    def parts = line.trim().split(' ')
+                    if (parts[-1] ==~ /[mf]_\d+_/) srgToName[parts[-1]] = parts[0]
+                }
+            }
+        }
+        entries(original.singleFile) { it.endsWith('refmap.json') }.each { path, text ->
+            write(path, text.replaceAll(/[mf]_\d+_/) { srg -> srgToName.getOrDefault(srg, srg) })
+        }
     }
 }
 
-apply from: 'mcreator.gradle'
+tasks.register('patchTerraBlender', Zip) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(tasks.named('fixTerraBlenderMetadata').map { layout.buildDirectory.dir('terrablender/meta').get() })
+    from(zipTree(renameTerraBlender.flatMap { it.output }))
+    dependsOn 'fixTerraBlenderMetadata'
+    archiveFileName = "TerraBlender-forge-${minecraft_version}-${terrablender_version}.jar"
+    destinationDirectory = layout.buildDirectory.dir('terrablender/patched')
+}
+
+dependencies {
+    implementation files(tasks.named('patchTerraBlender'))
+}
+
+tasks.named('processResources', ProcessResources) {
+    var replaceProperties = [
+            minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
+            forge_version: forge_version, forge_version_range: forge_version_range,
+            loader_version_range: loader_version_range,
+            mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+            mod_authors: mod_authors, mod_description: mod_description,
+            terrablender_version_range: terrablender_version_range,
+    ]
+    inputs.property('replaceProperties', replaceProperties)
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties
+    }
+}
+
+tasks.named('jar', Jar) {
+    manifest {
+        attributes([
+                'Specification-Title'   : mod_id,
+                'Specification-Vendor'  : mod_authors,
+                'Specification-Version' : '1',
+                'Implementation-Title'  : project.name,
+                'Implementation-Version': project.jar.archiveVersion,
+                'Implementation-Vendor' : mod_authors
+        ])
+    }
+    archiveClassifier = 'unobfuscated'
+}
+
+renamer.mappings.from minecraft.dependency.toSrgFile
+
+renamer.classes(tasks.named('jar', Jar)) {
+    archiveClassifier = ''
+}
+
+tasks.named('build') { dependsOn 'renameJar' }
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+idea.module { downloadJavadoc = downloadSources = true }
+idea.project.settings.taskTriggers.afterSync tasks.named('patchTerraBlender')

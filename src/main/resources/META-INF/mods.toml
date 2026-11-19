@@ -1,27 +1,31 @@
 modLoader="javafml"
-loaderVersion="[47,)"
-license="Not specified"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
 [[mods]]
-modId="dora"
-version="1.0.0"
-displayName="Dora"
-displayURL="https://mcreator.net"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-authors="MCreator"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''${mod_description}'''
 
-# Start of user code block mod configuration
-# End of user code block mod configuration
-
-[[dependencies.dora]]
-    modId="minecraft"
+[[dependencies.${mod_id}]]
+    modId="forge"
     mandatory=true
-    versionRange="[1.20.1]"
-    ordering="AFTER"
+    versionRange="${forge_version_range}"
+    ordering="NONE"
     side="BOTH"
 
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
-
-
-# Start of user code block dependencies configuration
-# End of user code block dependencies configuration
+[[dependencies.${mod_id}]]
+    modId="terrablender"
+    mandatory=true
+    versionRange="${terrablender_version_range}"
+    ordering="AFTER"
+    side="BOTH"

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": "dora:sugar_maple_checked",
+        "chance": 0.4
+      },
+      {
+        "feature": "dora:weeping_willow_checked",
+        "chance": 0.25
+      }
+    ],
+    "default": "dora:english_oak_checked"
+  }
+}

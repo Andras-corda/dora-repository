@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "dora:block/warty_goblin"
+    },
+    "lit=true": {
+      "model": "dora:block/warty_goblin"
+    }
+  }
+}

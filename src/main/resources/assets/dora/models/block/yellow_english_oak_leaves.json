@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "dora:block/yellow_english_oak_leaves"
+  },
+  "render_type": "minecraft:cutout_mipped"
+}

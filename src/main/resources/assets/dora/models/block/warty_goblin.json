@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dora:block/warty_goblin_bottom",
+    "side": "dora:block/warty_goblin_side",
+    "top": "dora:block/warty_goblin_top"
+  }
+}

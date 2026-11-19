@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "dora:block/jarrahdale"
+    },
+    "lit=true": {
+      "model": "dora:block/jarrahdale"
+    }
+  }
+}

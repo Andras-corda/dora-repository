@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dora:english_oak_log",
+    "dora:stripped_english_oak_log",
+    "dora:english_oak_wood",
+    "dora:stripped_english_oak_wood"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "dora:cooking_pumpkins"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "   ",
+    " P ",
+    "S  "
+  ],
+  "result": {
+    "item": "dora:pumpkin_on_a_stick",
+    "count": 3
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "minecraft:block/pumpkin"
+    },
+    "lit=true": {
+      "model": "minecraft:block/pumpkin"
+    }
+  }
+}

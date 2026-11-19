@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "dora:cooking_pumpkins"
+    },
+    "B": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "   ",
+    " P ",
+    " B "
+  ],
+  "result": {
+    "item": "dora:pumpkin_soup"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dora:block/english_oak_slab"
+    },
+    "type=double": {
+      "model": "dora:block/english_oak_planks"
+    },
+    "type=top": {
+      "model": "dora:block/english_oak_slab_top"
+    }
+  }
+}

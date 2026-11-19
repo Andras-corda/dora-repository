@@ -1,0 +1,15 @@
+{
+  "type": "dora:template_tree",
+  "config": {
+    "templates": [
+      "dora:trees/sugar_maple_01"
+    ],
+    "decorators": [
+      {
+        "type": "dora:leaf_litter",
+        "tries": 16,
+        "radius": 6
+      }
+    ]
+  }
+}

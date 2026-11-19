@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "dora:maple_log",
+    "dora:stripped_maple_log",
+    "dora:willow_log",
+    "dora:english_oak_log",
+    "dora:maple_wood",
+    "dora:stripped_maple_wood",
+    "dora:drained_maple_log",
+    "dora:drained_maple_wood",
+    "dora:stripped_english_oak_log",
+    "dora:english_oak_wood",
+    "dora:stripped_english_oak_wood"
+  ]
+}

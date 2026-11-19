@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "dora:block/lumina"
+    },
+    "lit=true": {
+      "model": "dora:block/lumina"
+    }
+  }
+}

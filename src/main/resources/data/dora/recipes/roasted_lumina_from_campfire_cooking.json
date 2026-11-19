@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "ingredient": {
+    "item": "dora:lumina"
+  },
+  "result": "dora:roasted_lumina",
+  "experience": 0.35,
+  "cookingtime": 600
+}

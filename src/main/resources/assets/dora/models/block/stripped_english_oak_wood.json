@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dora:block/stripped_english_oak_log",
+    "side": "dora:block/stripped_english_oak_log"
+  }
+}
