@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "dora:maple_door",
-    "dora:english_oak_door"
+    "dora:english_oak_door",
+    "dora:drained_maple_door"
   ]
 }

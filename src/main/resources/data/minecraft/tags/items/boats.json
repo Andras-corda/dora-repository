@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dora:maple_boat"
+    "dora:maple_boat",
+    "dora:english_oak_boat",
+    "dora:drained_maple_boat"
   ]
 }

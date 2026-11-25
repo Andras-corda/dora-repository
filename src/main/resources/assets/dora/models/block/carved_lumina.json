@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "front": "dora:block/carved_lumina",
+    "side": "dora:block/lumina_side",
+    "top": "dora:block/lumina_top",
+    "bottom": "dora:block/lumina_bottom"
+  }
+}

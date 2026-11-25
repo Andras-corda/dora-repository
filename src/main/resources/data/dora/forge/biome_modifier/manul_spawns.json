@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#forge:is_cold/overworld",
+  "spawners": {
+    "type": "dora:manul",
+    "weight": 6,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

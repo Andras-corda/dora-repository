@@ -1,0 +1,35 @@
+{
+  "type": "dora:bottle_returning",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    [
+      {
+        "type": "forge:partial_nbt",
+        "item": "minecraft:potion",
+        "nbt": {
+          "Potion": "minecraft:poison"
+        }
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "minecraft:potion",
+        "nbt": {
+          "Potion": "minecraft:long_poison"
+        }
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "minecraft:potion",
+        "nbt": {
+          "Potion": "minecraft:strong_poison"
+        }
+      }
+    ]
+  ],
+  "result": {
+    "item": "dora:poisoned_apple"
+  }
+}

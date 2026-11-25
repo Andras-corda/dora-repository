@@ -22,6 +22,9 @@ public class FlammableLogBlock extends RotatedPillarBlock {
         this.stripped = stripped;
     }
 
+    private int encouragement = 5;
+    private int flammability = 5;
+
     public FlammableLogBlock(Properties properties) {
         this(properties, null);
     }
@@ -41,11 +44,17 @@ public class FlammableLogBlock extends RotatedPillarBlock {
 
     @Override
     public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 5;
+        return flammability;
     }
 
     @Override
     public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 5;
+        return encouragement;
+    }
+
+    public FlammableLogBlock burnsFaster() {
+        encouragement = 10;
+        flammability = 10;
+        return this;
     }
 }

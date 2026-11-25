@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dora:maple_wall_sign"
+    "dora:maple_wall_sign",
+    "dora:english_oak_wall_sign",
+    "dora:drained_maple_wall_sign"
   ]
 }

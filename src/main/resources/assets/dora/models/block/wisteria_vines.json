@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "dora:block/wisteria_vines"
+  },
+  "render_type": "minecraft:cutout"
+}

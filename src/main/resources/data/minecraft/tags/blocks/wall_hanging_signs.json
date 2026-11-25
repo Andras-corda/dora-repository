@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dora:maple_wall_hanging_sign"
+    "dora:maple_wall_hanging_sign",
+    "dora:english_oak_wall_hanging_sign",
+    "dora:drained_maple_wall_hanging_sign"
   ]
 }

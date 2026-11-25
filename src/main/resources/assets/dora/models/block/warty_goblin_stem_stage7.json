@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/stem_growth7",
+  "textures": {
+    "stem": "dora:block/warty_goblin_stem"
+  },
+  "render_type": "minecraft:cutout"
+}

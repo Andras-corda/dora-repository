@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "dora:drained_maple_planks"
+    }
+  ],
+  "result": {
+    "item": "dora:drained_maple_button"
+  }
+}

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "dora:maple_fence_gate",
-    "dora:english_oak_fence_gate"
+    "dora:english_oak_fence_gate",
+    "dora:drained_maple_fence_gate"
   ]
 }

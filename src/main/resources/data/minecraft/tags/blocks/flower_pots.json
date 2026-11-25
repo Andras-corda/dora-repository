@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dora:potted_maple_sapling",
+    "dora:potted_willow_sapling",
+    "dora:potted_english_oak_sapling",
+    "dora:potted_wisteria_sapling"
+  ]
+}

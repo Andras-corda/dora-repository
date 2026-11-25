@@ -1,6 +1,7 @@
 package com.qbits.dora.init;
 
 import com.qbits.dora.Dora;
+import com.qbits.dora.worldgen.HangingWisteriaDecorator;
 import com.qbits.dora.worldgen.LeafLitterDecorator;
 import com.qbits.dora.worldgen.TemplateTreeConfiguration;
 import com.qbits.dora.worldgen.TemplateTreeFeature;
@@ -21,10 +22,12 @@ public class ModFeatures {
 
     public static final RegistryObject<TemplateTreeFeature> TEMPLATE_TREE = FEATURES.register("template_tree", () -> new TemplateTreeFeature(TemplateTreeConfiguration.CODEC));
     public static final RegistryObject<TreeDecoratorType<LeafLitterDecorator>> LEAF_LITTER = TREE_DECORATORS.register("leaf_litter", () -> new TreeDecoratorType<>(LeafLitterDecorator.CODEC));
+    public static final RegistryObject<TreeDecoratorType<HangingWisteriaDecorator>> HANGING_WISTERIA = TREE_DECORATORS.register("hanging_wisteria", () -> new TreeDecoratorType<>(HangingWisteriaDecorator.CODEC));
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SUGAR_MAPLE = key("sugar_maple");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WEEPING_WILLOW = key("weeping_willow");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ENGLISH_OAK = key("english_oak");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WISTERIA = key("wisteria");
 
     private static ResourceKey<ConfiguredFeature<?, ?>> key(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Dora.MODID, name));

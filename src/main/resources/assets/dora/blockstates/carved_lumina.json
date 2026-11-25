@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "dora:block/carved_lumina"
+    },
+    "facing=east": {
+      "model": "dora:block/carved_lumina",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "dora:block/carved_lumina",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dora:block/carved_lumina",
+      "y": 270
+    }
+  }
+}

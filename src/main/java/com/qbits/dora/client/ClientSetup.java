@@ -17,7 +17,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class ClientSetup {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> Sheets.addWoodType(ModWoodTypes.MAPLE));
+        event.enqueueWork(() -> {
+            Sheets.addWoodType(ModWoodTypes.MAPLE);
+            Sheets.addWoodType(ModWoodTypes.ENGLISH_OAK);
+            Sheets.addWoodType(ModWoodTypes.DRAINED_MAPLE);
+        });
     }
 
     @SubscribeEvent
@@ -25,7 +29,17 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlockEntities.CARVING.get(), CarvingBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
-        event.registerEntityRenderer(ModEntities.MAPLE_BOAT.get(), context -> new DoraBoatRenderer(context, false));
-        event.registerEntityRenderer(ModEntities.MAPLE_CHEST_BOAT.get(), context -> new DoraBoatRenderer(context, true));
+        event.registerEntityRenderer(ModEntities.MAPLE_BOAT.get(), context -> new DoraBoatRenderer(context, "maple", false));
+        event.registerEntityRenderer(ModEntities.MAPLE_CHEST_BOAT.get(), context -> new DoraBoatRenderer(context, "maple", true));
+        event.registerEntityRenderer(ModEntities.ENGLISH_OAK_BOAT.get(), context -> new DoraBoatRenderer(context, "english_oak", false));
+        event.registerEntityRenderer(ModEntities.ENGLISH_OAK_CHEST_BOAT.get(), context -> new DoraBoatRenderer(context, "english_oak", true));
+        event.registerEntityRenderer(ModEntities.DRAINED_MAPLE_BOAT.get(), context -> new DoraBoatRenderer(context, "drained_maple", false));
+        event.registerEntityRenderer(ModEntities.DRAINED_MAPLE_CHEST_BOAT.get(), context -> new DoraBoatRenderer(context, "drained_maple", true));
+        event.registerEntityRenderer(ModEntities.MANUL.get(), ManulRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ManulModel.LAYER, ManulModel::createBodyLayer);
     }
 }

@@ -14,9 +14,9 @@ import net.minecraft.world.entity.vehicle.Boat;
 public class DoraBoatRenderer extends BoatRenderer {
     private final Pair<ResourceLocation, ListModel<Boat>> model;
 
-    public DoraBoatRenderer(EntityRendererProvider.Context context, boolean chest) {
+    public DoraBoatRenderer(EntityRendererProvider.Context context, String wood, boolean chest) {
         super(context, chest);
-        ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(Dora.MODID, "textures/entity/" + (chest ? "chest_boat" : "boat") + "/maple.png");
+        ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(Dora.MODID, "textures/entity/" + (chest ? "chest_boat" : "boat") + "/" + wood + ".png");
         ListModel<Boat> boatModel = chest
                 ? new ChestBoatModel(context.bakeLayer(ModelLayers.createChestBoatModelName(Boat.Type.OAK)))
                 : new BoatModel(context.bakeLayer(ModelLayers.createBoatModelName(Boat.Type.OAK)));

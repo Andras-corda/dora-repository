@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dora:warty_goblin"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "dora:warty_goblin_seeds"
+  }
+}

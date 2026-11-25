@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "tip=false": {
+      "model": "dora:block/wisteria_vines"
+    },
+    "tip=true": {
+      "model": "dora:block/wisteria_vines_tip"
+    }
+  }
+}

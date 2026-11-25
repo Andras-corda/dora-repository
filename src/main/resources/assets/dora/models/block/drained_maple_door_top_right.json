@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "dora:block/drained_maple_door_bottom",
+    "top": "dora:block/drained_maple_door_top"
+  },
+  "render_type": "minecraft:cutout"
+}

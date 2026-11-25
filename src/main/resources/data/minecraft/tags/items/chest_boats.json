@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dora:maple_chest_boat"
+    "dora:maple_chest_boat",
+    "dora:english_oak_chest_boat",
+    "dora:drained_maple_chest_boat"
   ]
 }

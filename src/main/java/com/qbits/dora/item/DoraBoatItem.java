@@ -1,12 +1,11 @@
 package com.qbits.dora.item;
 
-import com.qbits.dora.entity.DoraBoat;
-import com.qbits.dora.entity.DoraChestBoat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
@@ -18,15 +17,16 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class DoraBoatItem extends Item {
     private static final Predicate<Entity> COLLIDES = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
 
-    private final boolean chest;
+    private final Supplier<? extends EntityType<? extends Boat>> type;
 
-    public DoraBoatItem(boolean chest, Properties properties) {
+    public DoraBoatItem(Supplier<? extends EntityType<? extends Boat>> type, Properties properties) {
         super(properties);
-        this.chest = chest;
+        this.type = type;
     }
 
     @Override
@@ -43,8 +43,15 @@ public class DoraBoatItem extends Item {
                 return InteractionResultHolder.pass(stack);
             }
         }
+        Boat boat = type.get().create(level);
+        if (boat == null) {
+            return InteractionResultHolder.fail(stack);
+        }
         Vec3 at = hit.getLocation();
-        Boat boat = chest ? new DoraChestBoat(level, at.x, at.y, at.z) : new DoraBoat(level, at.x, at.y, at.z);
+        boat.setPos(at.x, at.y, at.z);
+        boat.xo = at.x;
+        boat.yo = at.y;
+        boat.zo = at.z;
         boat.setYRot(player.getYRot());
         if (!level.noCollision(boat, boat.getBoundingBox())) {
             return InteractionResultHolder.fail(stack);

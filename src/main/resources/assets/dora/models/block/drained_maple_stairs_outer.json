@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "dora:block/drained_maple_planks",
+    "side": "dora:block/drained_maple_planks",
+    "top": "dora:block/drained_maple_planks"
+  }
+}

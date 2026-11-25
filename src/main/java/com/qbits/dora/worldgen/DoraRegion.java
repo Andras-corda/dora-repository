@@ -14,6 +14,8 @@ import terrablender.api.RegionType;
 import java.util.function.Consumer;
 
 public class DoraRegion extends Region {
+    private static final Climate.Parameter FULL = Climate.Parameter.span(-1.0F, 1.0F);
+
     public DoraRegion(ResourceLocation name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
@@ -24,6 +26,16 @@ public class DoraRegion extends Region {
             builder.replaceBiome(Biomes.SUNFLOWER_PLAINS, ModBiomes.PUMPKIN_FIELD);
             builder.replaceBiome(Biomes.FOREST, ModBiomes.AUTUMNAL_FOREST);
             builder.replaceBiome(Biomes.FLOWER_FOREST, ModBiomes.MAPLE_FOREST);
+            builder.replaceBiome(Biomes.OLD_GROWTH_BIRCH_FOREST, ModBiomes.BLOOMING_SANCTUARY);
         });
+        this.addBiome(mapper, Climate.parameters(
+                FULL,
+                Climate.Parameter.span(-1.0F, -0.7F),
+                FULL,
+                FULL,
+                Climate.Parameter.span(0.2F, 0.5F),
+                FULL,
+                0.0F
+        ), ModBiomes.ANT_HILL);
     }
 }

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "dora:maple_slab",
-    "dora:english_oak_slab"
+    "dora:english_oak_slab",
+    "dora:drained_maple_slab"
   ]
 }
