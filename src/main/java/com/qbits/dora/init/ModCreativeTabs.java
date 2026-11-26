@@ -42,7 +42,7 @@ public class ModCreativeTabs {
     }
 
     private static boolean isPumpkin(String name) {
-        return name.contains("lumina") || name.contains("warty_goblin") || name.startsWith("jarrahdale") && !name.endsWith("_pie");
+        return name.equals("cobweb_threads") || name.equals("big_pumpkin") || name.contains("lumina") || name.contains("warty_goblin") || name.contains("jarrahdale") && !name.endsWith("_pie");
     }
 
     private static boolean isSpring(String name) {

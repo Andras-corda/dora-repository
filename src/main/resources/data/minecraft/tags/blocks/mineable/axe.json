@@ -58,6 +58,26 @@
     "dora:attached_lumina_stem",
     "dora:attached_jarrahdale_stem",
     "dora:attached_warty_goblin_stem",
-    "dora:carved_lumina"
+    "dora:carved_lumina",
+    "dora:wisteria_planks",
+    "dora:wisteria_stairs",
+    "dora:wisteria_slab",
+    "dora:wisteria_fence",
+    "dora:wisteria_fence_gate",
+    "dora:wisteria_door",
+    "dora:wisteria_trapdoor",
+    "dora:wisteria_button",
+    "dora:wisteria_pressure_plate",
+    "dora:wisteria_sign",
+    "dora:wisteria_wall_sign",
+    "dora:wisteria_hanging_sign",
+    "dora:wisteria_wall_hanging_sign",
+    "dora:stripped_wisteria_log",
+    "dora:wisteria_wood",
+    "dora:stripped_wisteria_wood",
+    "dora:big_jarrahdale",
+    "dora:big_pumpkin",
+    "dora:big_warty_goblin",
+    "dora:big_lumina"
   ]
 }

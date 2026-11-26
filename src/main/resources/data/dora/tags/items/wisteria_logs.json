@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dora:wisteria_log",
+    "dora:stripped_wisteria_log",
+    "dora:wisteria_wood",
+    "dora:stripped_wisteria_wood"
+  ]
+}

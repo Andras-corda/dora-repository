@@ -23,6 +23,8 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<DoraBoat>> DRAINED_MAPLE_BOAT = boat("drained_maple_boat", () -> ModItems.DRAINED_MAPLE_BOAT.get());
     public static final RegistryObject<EntityType<DoraChestBoat>> DRAINED_MAPLE_CHEST_BOAT = chestBoat("drained_maple_chest_boat", () -> ModItems.DRAINED_MAPLE_CHEST_BOAT.get());
+    public static final RegistryObject<EntityType<DoraBoat>> WISTERIA_BOAT = boat("wisteria_boat", () -> ModItems.WISTERIA_BOAT.get());
+    public static final RegistryObject<EntityType<DoraChestBoat>> WISTERIA_CHEST_BOAT = chestBoat("wisteria_chest_boat", () -> ModItems.WISTERIA_CHEST_BOAT.get());
 
     public static final RegistryObject<EntityType<Manul>> MANUL = ENTITY_TYPES.register("manul", () ->
             EntityType.Builder.of(Manul::new, MobCategory.CREATURE).sized(0.6F, 0.7F).clientTrackingRange(10).build("manul"));

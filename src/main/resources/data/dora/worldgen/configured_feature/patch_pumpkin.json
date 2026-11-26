@@ -1,0 +1,8 @@
+{
+  "type": "dora:pumpkin_patch",
+  "config": {
+    "block": "minecraft:pumpkin",
+    "tries": 40,
+    "spread": 7
+  }
+}

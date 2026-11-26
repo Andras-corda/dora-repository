@@ -9,6 +9,7 @@ import com.qbits.dora.init.ModBlocks;
 import com.qbits.dora.init.ModCreativeTabs;
 import com.qbits.dora.init.ModEntities;
 import com.qbits.dora.init.ModItems;
+import com.qbits.dora.init.ModParticles;
 import com.qbits.dora.init.ModRecipes;
 import com.qbits.dora.network.ModNetwork;
 import com.qbits.dora.worldgen.DoraRegion;
@@ -37,6 +38,7 @@ public class Dora {
         ModCreativeTabs.TABS.register(bus);
         ModBlockEntities.BLOCK_ENTITIES.register(bus);
         ModFeatures.FEATURES.register(bus);
+        ModParticles.PARTICLES.register(bus);
         ModRecipes.SERIALIZERS.register(bus);
         ModFeatures.TREE_DECORATORS.register(bus);
         ModEntities.ENTITY_TYPES.register(bus);

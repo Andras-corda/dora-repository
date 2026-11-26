@@ -3,10 +3,10 @@
   "temperature": 0.7,
   "downfall": 0.6,
   "effects": {
-    "sky_color": 7972607,
-    "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "sky_color": 10528198,
+    "fog_color": 15124620,
+    "water_color": 3099256,
+    "water_fog_color": 266278,
     "grass_color": 14254635,
     "foliage_color": 13136938,
     "mood_sound": {
@@ -14,6 +14,12 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
+    },
+    "particle": {
+      "options": {
+        "type": "dora:autumn_leaf"
+      },
+      "probability": 0.0003
     }
   },
   "spawners": {
@@ -38,6 +44,12 @@
       }
     ],
     "monster": [
+      {
+        "type": "minecraft:spider",
+        "weight": 150,
+        "minCount": 4,
+        "maxCount": 4
+      },
       {
         "type": "minecraft:zombie",
         "weight": 95,
@@ -129,7 +141,10 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "dora:pumpkin_field_disk_coarse_dirt",
+      "dora:pumpkin_field_disk_podzol",
+      "dora:pumpkin_field_disk_dirt_path"
     ],
     [],
     [
@@ -138,12 +153,20 @@
     ],
     [
       "minecraft:glow_lichen",
+      "dora:pumpkin_field_pond",
+      "dora:pumpkin_field_ruined_wall",
       "minecraft:patch_tall_grass_2",
       "dora:pumpkin_field_birch",
       "minecraft:patch_grass_plain",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
+      "dora:pumpkin_field_brown_mushroom",
+      "dora:pumpkin_field_red_mushroom",
       "minecraft:patch_sugar_cane",
+      "dora:pumpkin_field_big_pumpkin",
+      "dora:pumpkin_field_big_warty_goblin",
+      "dora:pumpkin_field_big_lumina",
+      "dora:pumpkin_field_big_jarrahdale",
       "dora:pumpkin_field_pumpkins",
       "dora:pumpkin_field_lumina",
       "dora:pumpkin_field_jarrahdale",

@@ -1,0 +1,87 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "inside_top_left": "dora:block/big_jarrahdale/inside_top_left",
+    "side_top_right": "dora:block/big_jarrahdale/side_top_right",
+    "inside_top_right": "dora:block/big_jarrahdale/inside_top_right",
+    "side_top_left": "dora:block/big_jarrahdale/side_top_left",
+    "top_south_east": "dora:block/big_jarrahdale/top_south_east",
+    "particle": "dora:block/big_jarrahdale/side_top_left"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#inside_top_left",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#side_top_right",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#inside_top_right",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#side_top_left",
+          "cullface": "east"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#top_south_east",
+          "cullface": "up"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#inside_top_right",
+          "cullface": "down"
+        }
+      }
+    }
+  ]
+}

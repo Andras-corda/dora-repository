@@ -22,7 +22,8 @@ public class WoodFlammability {
         FireBlock fire = (FireBlock) Blocks.FIRE;
         List<RegistryObject<Block>> regular = List.of(
                 ModBlocks.MAPLE_PLANKS, ModBlocks.MAPLE_STAIRS, ModBlocks.MAPLE_SLAB, ModBlocks.MAPLE_FENCE, ModBlocks.MAPLE_FENCE_GATE,
-                ModBlocks.ENGLISH_OAK_PLANKS, ModBlocks.ENGLISH_OAK_STAIRS, ModBlocks.ENGLISH_OAK_SLAB, ModBlocks.ENGLISH_OAK_FENCE, ModBlocks.ENGLISH_OAK_FENCE_GATE);
+                ModBlocks.ENGLISH_OAK_PLANKS, ModBlocks.ENGLISH_OAK_STAIRS, ModBlocks.ENGLISH_OAK_SLAB, ModBlocks.ENGLISH_OAK_FENCE, ModBlocks.ENGLISH_OAK_FENCE_GATE,
+                ModBlocks.WISTERIA_PLANKS, ModBlocks.WISTERIA_STAIRS, ModBlocks.WISTERIA_SLAB, ModBlocks.WISTERIA_FENCE, ModBlocks.WISTERIA_FENCE_GATE);
         List<RegistryObject<Block>> drained = List.of(
                 ModBlocks.DRAINED_MAPLE_PLANKS, ModBlocks.DRAINED_MAPLE_STAIRS, ModBlocks.DRAINED_MAPLE_SLAB, ModBlocks.DRAINED_MAPLE_FENCE, ModBlocks.DRAINED_MAPLE_FENCE_GATE);
         try {

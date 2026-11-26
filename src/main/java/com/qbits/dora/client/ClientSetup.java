@@ -3,12 +3,14 @@ package com.qbits.dora.client;
 import com.qbits.dora.Dora;
 import com.qbits.dora.init.ModBlockEntities;
 import com.qbits.dora.init.ModEntities;
+import com.qbits.dora.init.ModParticles;
 import com.qbits.dora.init.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -21,6 +23,7 @@ public class ClientSetup {
             Sheets.addWoodType(ModWoodTypes.MAPLE);
             Sheets.addWoodType(ModWoodTypes.ENGLISH_OAK);
             Sheets.addWoodType(ModWoodTypes.DRAINED_MAPLE);
+            Sheets.addWoodType(ModWoodTypes.WISTERIA);
         });
     }
 
@@ -35,7 +38,14 @@ public class ClientSetup {
         event.registerEntityRenderer(ModEntities.ENGLISH_OAK_CHEST_BOAT.get(), context -> new DoraBoatRenderer(context, "english_oak", true));
         event.registerEntityRenderer(ModEntities.DRAINED_MAPLE_BOAT.get(), context -> new DoraBoatRenderer(context, "drained_maple", false));
         event.registerEntityRenderer(ModEntities.DRAINED_MAPLE_CHEST_BOAT.get(), context -> new DoraBoatRenderer(context, "drained_maple", true));
+        event.registerEntityRenderer(ModEntities.WISTERIA_BOAT.get(), context -> new DoraBoatRenderer(context, "wisteria", false));
+        event.registerEntityRenderer(ModEntities.WISTERIA_CHEST_BOAT.get(), context -> new DoraBoatRenderer(context, "wisteria", true));
         event.registerEntityRenderer(ModEntities.MANUL.get(), ManulRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        ModParticles.FALLING_LEAVES.forEach(type -> event.registerSpriteSet(type.get(), FallingLeafParticle.Provider::new));
     }
 
     @SubscribeEvent

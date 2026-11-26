@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dora:block/wisteria_slab"
+    },
+    "type=double": {
+      "model": "dora:block/wisteria_planks"
+    },
+    "type=top": {
+      "model": "dora:block/wisteria_slab_top"
+    }
+  }
+}

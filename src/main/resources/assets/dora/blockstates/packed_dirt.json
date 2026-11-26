@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "dora:block/packed_dirt"
+      },
+      {
+        "model": "dora:block/packed_dirt_1"
+      }
+    ]
+  }
+}

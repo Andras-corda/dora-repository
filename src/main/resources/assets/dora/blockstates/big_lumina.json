@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "part=0": {
+      "model": "dora:block/big_lumina_part0"
+    },
+    "part=1": {
+      "model": "dora:block/big_lumina_part1"
+    },
+    "part=2": {
+      "model": "dora:block/big_lumina_part2"
+    },
+    "part=3": {
+      "model": "dora:block/big_lumina_part3"
+    },
+    "part=4": {
+      "model": "dora:block/big_lumina_part4"
+    },
+    "part=5": {
+      "model": "dora:block/big_lumina_part5"
+    },
+    "part=6": {
+      "model": "dora:block/big_lumina_part6"
+    },
+    "part=7": {
+      "model": "dora:block/big_lumina_part7"
+    }
+  }
+}

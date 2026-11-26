@@ -23,9 +23,9 @@ public class ModBlockEntities {
 
     @SuppressWarnings("DataFlowIssue")
     public static final RegistryObject<BlockEntityType<DoraSignBlockEntity>> SIGN = BLOCK_ENTITIES.register("sign", () ->
-            BlockEntityType.Builder.of(DoraSignBlockEntity::new, ModBlocks.MAPLE_SIGN.get(), ModBlocks.MAPLE_WALL_SIGN.get(), ModBlocks.ENGLISH_OAK_SIGN.get(), ModBlocks.ENGLISH_OAK_WALL_SIGN.get(), ModBlocks.DRAINED_MAPLE_SIGN.get(), ModBlocks.DRAINED_MAPLE_WALL_SIGN.get()).build(null));
+            BlockEntityType.Builder.of(DoraSignBlockEntity::new, ModBlocks.MAPLE_SIGN.get(), ModBlocks.MAPLE_WALL_SIGN.get(), ModBlocks.ENGLISH_OAK_SIGN.get(), ModBlocks.ENGLISH_OAK_WALL_SIGN.get(), ModBlocks.DRAINED_MAPLE_SIGN.get(), ModBlocks.DRAINED_MAPLE_WALL_SIGN.get(), ModBlocks.WISTERIA_SIGN.get(), ModBlocks.WISTERIA_WALL_SIGN.get()).build(null));
 
     @SuppressWarnings("DataFlowIssue")
     public static final RegistryObject<BlockEntityType<DoraHangingSignBlockEntity>> HANGING_SIGN = BLOCK_ENTITIES.register("hanging_sign", () ->
-            BlockEntityType.Builder.of(DoraHangingSignBlockEntity::new, ModBlocks.MAPLE_HANGING_SIGN.get(), ModBlocks.MAPLE_WALL_HANGING_SIGN.get(), ModBlocks.ENGLISH_OAK_HANGING_SIGN.get(), ModBlocks.ENGLISH_OAK_WALL_HANGING_SIGN.get(), ModBlocks.DRAINED_MAPLE_HANGING_SIGN.get(), ModBlocks.DRAINED_MAPLE_WALL_HANGING_SIGN.get()).build(null));
+            BlockEntityType.Builder.of(DoraHangingSignBlockEntity::new, ModBlocks.MAPLE_HANGING_SIGN.get(), ModBlocks.MAPLE_WALL_HANGING_SIGN.get(), ModBlocks.ENGLISH_OAK_HANGING_SIGN.get(), ModBlocks.ENGLISH_OAK_WALL_HANGING_SIGN.get(), ModBlocks.DRAINED_MAPLE_HANGING_SIGN.get(), ModBlocks.DRAINED_MAPLE_WALL_HANGING_SIGN.get(), ModBlocks.WISTERIA_HANGING_SIGN.get(), ModBlocks.WISTERIA_WALL_HANGING_SIGN.get()).build(null));
 }

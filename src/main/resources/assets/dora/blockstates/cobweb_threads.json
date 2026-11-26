@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "bridge=false,facing=west": {
+      "model": "dora:block/cobweb_threads"
+    },
+    "bridge=true,facing=west": {
+      "model": "dora:block/cobweb_threads_bridge"
+    },
+    "bridge=false,facing=north": {
+      "model": "dora:block/cobweb_threads",
+      "y": 90
+    },
+    "bridge=true,facing=north": {
+      "model": "dora:block/cobweb_threads_bridge",
+      "y": 90
+    },
+    "bridge=false,facing=east": {
+      "model": "dora:block/cobweb_threads",
+      "y": 180
+    },
+    "bridge=true,facing=east": {
+      "model": "dora:block/cobweb_threads_bridge",
+      "y": 180
+    },
+    "bridge=false,facing=south": {
+      "model": "dora:block/cobweb_threads",
+      "y": 270
+    },
+    "bridge=true,facing=south": {
+      "model": "dora:block/cobweb_threads_bridge",
+      "y": 270
+    }
+  }
+}
